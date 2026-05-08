@@ -1,9 +1,11 @@
-const CACHE_NAME = "zhian-gongkao-v3";
+const CACHE_NAME = "zhian-gongkao-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./script.js",
+  "./cuboid-sim.html",
+  "./cuboid-sim.css",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>长方体细木条题可视化</title>
+    <link rel="stylesheet" href="./cuboid-sim.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro">
+        <p class="tag">可视化理解</p>
+        <h1>为什么体积是 √2？</h1>
+        <p>最短木条长 1 分米。长方体的棱和每个面的对角线一共只出现 3 种长度。</p>
+      </section>
+
+      <section class="card">
+        <svg viewBox="0 0 560 360" role="img" aria-label="边长为 1、1、√2 的长方体">
+          <polygon class="face top" points="130,92 350,62 450,142 230,174" />
+          <polygon class="face right" points="350,62 450,142 450,262 350,184" />
+          <polygon class="face front" points="230,174 450,142 450,262 230,296" />
+          <polygon class="face left" points="130,92 230,174 230,296 130,214" />
+
+          <path class="edge blue" d="M130 92 L350 62 M230 174 L450 142 M230 296 L450 262" />
+          <path class="edge green" d="M130 92 L230 174 M350 62 L450 142 M130 214 L230 296" />
+          <path class="edge orange" d="M130 92 L130 214 M230 174 L230 296 M450 142 L450 262 M350 62 L350 184" />
+
+          <path class="diag purple" d="M130 92 L450 142" />
+          <path class="diag rose" d="M130 92 L230 296" />
+          <path class="diag rose" d="M350 62 L450 262" />
+
+          <text x="226" y="44">1</text>
+          <text x="82" y="162">1</text>
+          <text x="464" y="210">√2</text>
+          <text x="260" y="122">√2</text>
+          <text x="160" y="256">√3</text>
+        </svg>
+      </section>
+
+      <section class="steps">
+        <article>
+          <span>1</span>
+          <p>设三条棱为 <strong>1、b、c</strong>，因为最短是 1。</p>
+        </article>
+        <article>
+          <span>2</span>
+          <p>如果 b 不是 1，就会出现 1、b、c 和多种面对角线，长度会超过 3 种。</p>
+        </article>
+        <article>
+          <span>3</span>
+          <p>所以 b = 1。为了只剩 3 种长度，必须让 c = √2。</p>
+        </article>
+      </section>
+
+      <section class="answer">
+        <p>纸盒三条棱长：</p>
+        <strong>1 × 1 × √2</strong>
+        <p>体积 = <strong>√2 立方分米</strong></p>
+      </section>
+    </main>
+  </body>
+</html>
