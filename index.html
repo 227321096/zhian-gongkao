@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6f8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="知岸公考" />
+    <title>知岸公考</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="知岸公考手机端界面">
+      <section class="app-screen">
+        <header class="status-bar" aria-label="状态栏">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true">
+            <i data-lucide="signal"></i>
+            <i data-lucide="wifi"></i>
+            <i data-lucide="battery-full"></i>
+          </div>
+        </header>
+
+        <section class="top-area">
+          <nav class="app-nav" aria-label="顶部导航">
+            <button class="icon-btn" aria-label="打开学习日历">
+              <i data-lucide="calendar-days"></i>
+            </button>
+            <div class="brand-lockup">
+              <span>知岸公考</span>
+              <strong id="screen-title">上岸计划</strong>
+            </div>
+            <button class="avatar-btn" aria-label="个人中心">林</button>
+          </nav>
+        </section>
+
+        <section class="content">
+          <section class="view active" data-view="home" aria-label="首页">
+            <section class="hero-panel" aria-label="今日学习概览">
+              <div>
+                <p class="eyebrow">今日目标</p>
+                <h1>行测强化 · 第 42 天</h1>
+                <p class="hero-copy">距离省考还有 86 天，保持节奏就会看见岸。</p>
+              </div>
+              <div class="ring" aria-label="今日完成率 68%">
+                <svg viewBox="0 0 120 120" role="img">
+                  <circle class="ring-bg" cx="60" cy="60" r="48"></circle>
+                  <circle class="ring-fill" cx="60" cy="60" r="48"></circle>
+                </svg>
+                <span id="progress-label">68%</span>
+              </div>
+            </section>
+
+            <div class="metric-strip" aria-label="学习数据">
+              <article>
+                <span>连续</span>
+                <strong>18 天</strong>
+              </article>
+              <article>
+                <span>正确率</span>
+                <strong id="accuracy-label">76%</strong>
+              </article>
+              <article>
+                <span>已刷题</span>
+                <strong id="question-count">2,418</strong>
+              </article>
+            </div>
+
+            <section class="task-block" aria-label="今日任务">
+              <div class="section-title">
+                <h2>今日任务</h2>
+                <button aria-label="查看全部任务">
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+              <div class="task-list">
+                <article class="task-item is-active">
+                  <label class="check-wrap">
+                    <input type="checkbox" class="task-check" />
+                    <span></span>
+                  </label>
+                  <div>
+                    <h3>资料分析限时训练</h3>
+                    <p>20 题 · 25 分钟</p>
+                  </div>
+                  <button class="pill-btn" data-open-view="practice">开始</button>
+                </article>
+                <article class="task-item">
+                  <label class="check-wrap">
+                    <input type="checkbox" class="task-check" checked />
+                    <span></span>
+                  </label>
+                  <div>
+                    <h3>申论小题精批</h3>
+                    <p>1 题 · 晚 20:00 前</p>
+                  </div>
+                  <button class="ghost-btn" aria-label="进入申论小题精批">
+                    <i data-lucide="arrow-up-right"></i>
+                  </button>
+                </article>
+              </div>
+            </section>
+
+            <section class="grid-actions" aria-label="核心功能">
+              <button data-open-view="practice">
+                <i data-lucide="layers-3"></i>
+                <span>智能题库</span>
+              </button>
+              <button data-open-view="profile">
+                <i data-lucide="line-chart"></i>
+                <span>错题诊断</span>
+              </button>
+              <button data-open-view="courses">
+                <i data-lucide="graduation-cap"></i>
+                <span>系统课</span>
+              </button>
+              <button data-open-view="practice">
+                <i data-lucide="file-pen-line"></i>
+                <span>模考</span>
+              </button>
+            </section>
+
+            <section class="insight-card" aria-label="能力分析">
+              <div>
+                <p class="eyebrow">薄弱项</p>
+                <h2>判断推理 · 图形规律</h2>
+                <p>近 7 天正确率低于全站均值 9%，建议补练旋转与叠加规律。</p>
+              </div>
+              <button aria-label="开始补练" data-open-view="practice">
+                <i data-lucide="play"></i>
+              </button>
+            </section>
+          </section>
+
+          <section class="view" data-view="practice" aria-label="刷题">
+            <div class="practice-head">
+              <div>
+                <p class="eyebrow">智能题库</p>
+                <h1>资料分析专项</h1>
+              </div>
+              <span id="question-index">1 / 3</span>
+            </div>
+
+            <section class="question-card">
+              <p class="question-type" id="question-type">资料分析</p>
+              <h2 id="question-text"></h2>
+              <div class="option-list" id="option-list"></div>
+              <div class="answer-panel" id="answer-panel" hidden>
+                <strong id="answer-result"></strong>
+                <p id="answer-explain"></p>
+              </div>
+              <div class="practice-actions">
+                <button class="secondary-btn" id="mark-wrong">
+                  <i data-lucide="bookmark"></i>
+                  <span>标记</span>
+                </button>
+                <button class="pill-btn wide" id="next-question">下一题</button>
+              </div>
+            </section>
+          </section>
+
+          <section class="view" data-view="courses" aria-label="课程">
+            <div class="section-title roomy">
+              <h2>系统课</h2>
+              <button aria-label="筛选课程"><i data-lucide="sliders-horizontal"></i></button>
+            </div>
+            <div class="course-list">
+              <article class="course-item">
+                <span class="course-badge">直播</span>
+                <h3>行测高频模型精讲</h3>
+                <p>今晚 19:30 · 许老师</p>
+                <progress value="42" max="100"></progress>
+              </article>
+              <article class="course-item">
+                <span class="course-badge green">录播</span>
+                <h3>申论材料阅读方法</h3>
+                <p>12 讲 · 已学 8 讲</p>
+                <progress value="68" max="100"></progress>
+              </article>
+              <article class="course-item">
+                <span class="course-badge orange">模考</span>
+                <h3>省考全真冲刺卷</h3>
+                <p>周六 09:00 开始</p>
+                <progress value="18" max="100"></progress>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" data-view="profile" aria-label="我的">
+            <section class="profile-card">
+              <div class="profile-avatar">林</div>
+              <div>
+                <h2>林同学</h2>
+                <p>目标岗位：省直综合管理</p>
+              </div>
+            </section>
+            <div class="metric-strip profile-metrics">
+              <article>
+                <span>错题本</span>
+                <strong id="wrong-count">126</strong>
+              </article>
+              <article>
+                <span>收藏题</span>
+                <strong id="saved-count">38</strong>
+              </article>
+              <article>
+                <span>排名</span>
+                <strong>前 14%</strong>
+              </article>
+            </div>
+            <section class="settings-list" aria-label="学习设置">
+              <button>
+                <i data-lucide="target"></i>
+                <span>备考目标</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <button>
+                <i data-lucide="bell"></i>
+                <span>学习提醒</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <button>
+                <i data-lucide="download-cloud"></i>
+                <span>离线缓存</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </section>
+          </section>
+        </section>
+
+        <nav class="tab-bar" aria-label="底部导航">
+          <button class="active" data-tab="home"><i data-lucide="home"></i><span>首页</span></button>
+          <button data-tab="practice"><i data-lucide="scan-text"></i><span>刷题</span></button>
+          <button data-tab="courses"><i data-lucide="notebook-tabs"></i><span>课程</span></button>
+          <button data-tab="profile"><i data-lucide="user-round"></i><span>我的</span></button>
+        </nav>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
